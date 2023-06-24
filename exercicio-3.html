@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Exercicio 3: Calcular Maior Numero</h1>
+    <input type="number" id="numero1" placeholder="Primeiro Numero" />
+    <input type="number" id="numero2" placeholder="Segundo Numero" />
+    <button onclick="calcular()">Calcular</button>
+    <p>Resultado: <span id="resultado"></span></p>
+
+    <script>
+      function verificaMaiorValor(num1, num2) {
+        if (num1 > num2) {
+          return num1;
+        } else {
+          return num2;
+        }
+      }
+
+      function calcular() {
+        var valorMinimo = document.getElementById("numero1").value;
+        var valorMaximo = document.getElementById("numero2").value;
+        var resultado = verificaMaiorValor(parseInt(valorMinimo), parseInt(valorMaximo));
+        document.getElementById("resultado").innerHTML = resultado;
+      }
+    </script>
+  </body>
+</html>

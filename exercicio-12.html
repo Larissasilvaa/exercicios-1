@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercicio 12</title>
+  </head>
+  <body>
+    <h1>Exercicio 12: Mudar Conteúdo</h1>
+    <br>
+    <button onclick="mudaConteudo('site1')">Site 1</button>
+    <button onclick="mudaConteudo('site2')">Site 2</button>
+    <button onclick="mudaConteudo('site3')">Site 3</button>
+    
+    <div id="conteudo"></div>
+    <script>
+      function mudaConteudo(opcao) {
+        var body = document.getElementById("conteudo");
+        var conteudo = "";
+
+        if (opcao == "site1") {
+          conteudo = "<h1>Olá mundo</h1>";
+          conteudo += "<p>Hello World</p>";
+          conteudo +=
+            "<img src='https://www.alura.com.br/artigos/assets/hello-world-em-varias-linguagens/imagem1.gif' width='400' height='400'>";
+        } else if (opcao == "site2") {
+          conteudo = "<ul>";
+          conteudo += "<li>Item 1</li>";
+          conteudo += "<li>Item 2</li>";
+          conteudo += "<li>Item 3</li>";
+          conteudo += "<li>Item 4</li>";
+          conteudo += "<li>Item 5</li>";
+          conteudo += "</ul>";
+          conteudo += "<ol>";
+          conteudo += "<li>Item 1</li>";
+          conteudo += "<li>Item 2</li>";
+          conteudo += "<li>Item 3</li>";
+          conteudo += "<li>Item 4</li>";
+          conteudo += "<li>Item 5</li>";
+          conteudo += "</ol>";
+        } else if (opcao == "site3") {
+          conteudo =
+            '<iframe width="560" height="315" src="https://www.youtube.com/embed/yorgg2ndlvE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>';
+          conteudo +=
+            '<br><a href="https://www.youtube.com/watch?v=yorgg2ndlvE" target="_blank">Assistir no Youtube</a>';
+        } else {
+          conteudo = "<p>Opção inválida.</p>";
+        }
+
+        console.log(body);
+
+        body.innerHTML = conteudo;
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Exercicio 1: Somar Números</h1>
+    <input type="number" id="numero1" placeholder="Primeiro Numero" />
+    <input type="number" id="numero2" placeholder="Segundo Numero" />
+    <button onclick="calcular()">Calcular</button>
+    <p>Resultado: <span id="resultado"></span></p>
+
+    <script>
+      function somaNumeros(num1, num2) {
+        return num1 + num2;
+      }
+
+      function calcular() {
+        var numero1 = document.getElementById("numero1").value;
+        var numero2 = document.getElementById("numero2").value;
+        var resultado = somaNumeros(parseInt(numero1), parseInt(numero2));
+        document.getElementById("resultado").innerHTML = resultado;
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Exercicio 9: Calcular Maior Numero Primo</h1>
+    <input type="number" id="numeroMinimo" placeholder="Minimo">
+    <input type="number" id="numeroMaximo" placeholder="Máximo">
+    <button onclick="calcular()">Calcular</button>
+    <p>Resultado: <span id="resultado"></span></p>
+
+    <script>
+      function calcularNumeroPrimo(numero) {
+        for (var i = 2; i < numero; i++) {
+          if (numero % i === 0) {
+            return false;
+          }
+        }
+        return numero > 1;
+      }
+
+      function calcularMaiorNumeroPrimo(minimo, maximo) {
+        var maiorNumero = 0;
+        for (var i = minimo; i < maximo; i++) {
+          if (calcularNumeroPrimo(i)) {
+            maiorNumero = i;
+          }
+        }
+        return maiorNumero;
+      }
+
+      function calcular() {
+        var valorMinimo = document.getElementById("numeroMinimo").value;
+        var valorMaximo = document.getElementById("numeroMaximo").value;
+        var resultado = calcularMaiorNumeroPrimo(parseInt(valorMinimo), parseInt(valorMaximo));
+        document.getElementById("resultado").innerHTML = resultado;
+      }
+    </script>
+  </body>
+</html>

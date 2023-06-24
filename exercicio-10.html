@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Exercicio 10: Inverter Frase</h1>
+    <textarea id="valor" cols="30" rows="5"></textarea>
+    <button onclick="inverter()">Inverter Frase</button>
+    <p>Resultado: <span id="resultado"></span></p>
+
+    <script>
+      function inverterFrase(frase) {
+        var fraseInversa = "";
+        var fraseQuebrada = frase.split(" ");
+
+        for (var i = fraseQuebrada.length - 1; i >= 0; i--) {
+          fraseInversa += fraseQuebrada[i] + " ";
+        }
+
+        return fraseInversa;
+      }
+
+      function inverter() {
+        var valor = document.getElementById("valor").value;
+        var resultado = inverterFrase(valor);
+        document.getElementById("resultado").innerHTML = resultado;
+      }
+    </script>
+  </body>
+</html>

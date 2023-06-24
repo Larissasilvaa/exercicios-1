@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Exercicio 6: Verificar se palavra é um palindromo</h1>
+    <input type="text" id="palavra" placeholder="Palavra" />
+    <button onclick="verificar()">Verificar</button>
+    <p>Resultado: <span id="resultado"></span></p>
+
+    <script>
+      function inverterString(palavra) {
+        var inversa = "";
+        for (var i = palavra.length - 1; i >= 0; i--) {
+          inversa += palavra[i];
+        }
+        return inversa;
+      }
+
+      function verificarPalindromo(palavra) {
+        return palavra.toLowerCase() === inverterString(palavra).toLowerCase();
+      }
+
+      function verificar() {
+        var palavra = document.getElementById("palavra").value;
+        var resultado = verificarPalindromo(palavra);
+        if (resultado == true) {
+          document.getElementById("resultado").innerHTML = "É um palindromo";
+        } else {
+          document.getElementById("resultado").innerHTML = "Não é um palindromo";
+        }
+      }
+    </script>
+  </body>
+</html>
